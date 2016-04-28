@@ -1,0 +1,21 @@
+# Site settings
+title: Prints Among Leaves
+header-img: img/home-bg.png
+email: douglas_lawrence@mac.com
+copyright_name: lawrend
+description: > # this means to ignore newlines until "baseurl:"
+  Leaving a trail through a forest of code
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  lawrend
+learn_profile: lawrend
+email_username: douglas_lawrence@mac.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
