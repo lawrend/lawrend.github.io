@@ -26,7 +26,7 @@ Let's figure out a way to remember it once and for all, shall we?
 
 ### LOOK. AT. HIM. ###
 
-## # He is not pleased with you.  You supplied the wrong number of arguments...AGAIN. ### 
+### He is not pleased with you.  You supplied the wrong number of arguments...AGAIN.
 
 Do not be afraid!
 
@@ -34,7 +34,7 @@ If you let them, his eyes communicate more than just displeasure;  they tell you
 
 I know, hard to believe.  But follow me, friend.  Let's look at what he says...
 
-** What the hell did *you* do that *for*? **
+** What the hell did *you* do that *for*?
 
  Who did this terrible thing?
 
