@@ -5,7 +5,7 @@ date:   2016-09-18 05:26:47 -0400
 ---
 
 > The first in an ongoing series of posts to help us hold on to those things we too often forget. Today's slippery pickle is...
-### Argument Error: wrong number of arguments (x for y) ###
+Argument Error: wrong number of arguments (x for y)!!!
 
 I've Googled this embarassingly simple thing an embarassingly large number of times (like maybe an actual googol).  Which number is the number of arguments I supplied?  Which number is the number of arguments required?
 
@@ -25,7 +25,7 @@ Let's figure out a way to remember it once and for all, shall we?
 ![](http://intheloose.com/wp-content/uploads/2014/07/23.jpg)
 
 ### LOOK. AT. HIM. ###
-#### He is not pleased with you.  You supplied the wrong number of arguments...AGAIN. ####
+He is not pleased with you.  You supplied the wrong number of arguments...AGAIN.
 
 Do not be afraid!
 
@@ -33,7 +33,7 @@ If you let them, his eyes communicate more than just displeasure;  they tell you
 
 I know, hard to believe.  But follow me, friend.  Let's look at what he says...
 
-#### What the hell did *you* do that *for*? ####
+What the hell did *you* do that *for*?
 
  Who did this terrible thing?
 
