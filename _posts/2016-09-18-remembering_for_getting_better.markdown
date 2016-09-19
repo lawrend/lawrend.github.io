@@ -25,7 +25,8 @@ Let's figure out a way to remember it once and for all, shall we?
 ![](http://intheloose.com/wp-content/uploads/2014/07/23.jpg)
 
 ### LOOK. AT. HIM. ###
-He is not pleased with you.  You supplied the wrong number of arguments...AGAIN.
+
+## # He is not pleased with you.  You supplied the wrong number of arguments...AGAIN. ### 
 
 Do not be afraid!
 
@@ -33,7 +34,7 @@ If you let them, his eyes communicate more than just displeasure;  they tell you
 
 I know, hard to believe.  But follow me, friend.  Let's look at what he says...
 
-What the hell did *you* do that *for*?
+** What the hell did *you* do that *for*? **
 
  Who did this terrible thing?
 
@@ -45,6 +46,7 @@ For what reason?  Alec does not know.  But he does know how you should read the 
 * (**[What the hell did you do that]** for? **[Here's what you should have done...]**)
 
 Let's try an example:
+
 * Argument Error: wrong number of arguments 
 * (**[1,333,296]** for **[2]**)
 
