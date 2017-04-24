@@ -50,3 +50,5 @@ But I will say this: If you think I am a deluded fool because I am deciding to k
 |*We'll look like this. It will be grand.*|
 |---------------------------------------------------|
 |![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg6pn5LLvPUuVnZk9SOSqHPw_rcCTFNnp9TksbO2cV_4-G0VM2_A)|
+
+P.S. Did you notice the unpaired paren up there? Me too. I kept it because I like to think this post will throw an error...
