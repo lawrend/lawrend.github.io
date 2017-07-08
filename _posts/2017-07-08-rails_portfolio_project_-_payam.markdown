@@ -1,15 +1,15 @@
 ---
 layout: post
 title:  "Rails Portfolio Project - Payam"
-date:   2017-07-08 07:24:15 +0000
+date:   2017-07-08 03:24:15 -0400
 ---
 
 *Note: the four model classes--User, Corpse(aka Payam), Style, and Line--are capitalized throughout this post.*
 
-<h3><a href="#overview">I. Overview</a><br>
-<a href="#models">II. Models and Associations</a><br>
-<a href="#methods">III. Validations and Methods</a><br>
-<a href="#walkthrough">IV. Walkthrough</a><br>
+<h3><a href="#overview">I. Overview</a></h3>
+<h3><a href="#models">II. Models and Associations</a></h3>
+<h3><a href="#methods">III. Validations and Methods</a></h3>
+<h3><a href="#walkthrough">IV. Walkthrough</a></h3>
 
 <h2 id="overview"> **I. OVERVIEW** </h2>
 
