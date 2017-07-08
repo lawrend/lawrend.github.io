@@ -6,12 +6,10 @@ date:   2017-07-08 03:24:15 -0400
 
 *Note: the four model classes--User, Corpse(aka Payam), Style, and Line--are capitalized throughout this post.*
 
-<a href="#overview"> ### I. Overview </a>
-<a href="#models">### II. Models and Associations</a>
-
-### <a href="#methods">III. Validations and Methods</a>
-
-### <a href="#walkthrough">IV. Walkthrough</a> 
+<h3><a href="#overview"> I. Overview </a><br>
+<a href="#models"> II. Models and Associations</a><br>
+<a href="#methods">III. Validations and Methods</a><br>
+<a href="#walkthrough">IV. Walkthrough</a></h3>
 
 <a id="overview"> **I. OVERVIEW** </a>
 
@@ -101,21 +99,21 @@ end
 
 ### 3. Line
 
-#### *Attributes*
+#### Attributes
 
-A Line has fiedls for:
+A Line has fields for:
 * **text**
 * **count** (the line number)
 * **author id**
 * **corpse id**
 
-#### *Associations*
+#### Associations
 
 * Each ***Line belongs to an "auth"***. The author ("auth") of a Line is a User so the `:class_name` is set to `User`. 
 
 * Each ***Line belongs to a Corpse***. Because both a new Corpse and a new Line are instantiated when the form is submitted, this association has an option of `optional: true` to allow a Line to be created simultaneously with the Corpse.  
 
-#### *Model*
+#### Model
 
 ```
 class Line < ApplicationRecord
