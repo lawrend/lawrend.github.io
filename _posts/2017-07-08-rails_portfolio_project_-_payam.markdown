@@ -44,6 +44,7 @@ In a real-world situation I would have gone in and re-written the code, especial
 **1. User**
 
 *Attributes*
+
 A User has fields for:
 * **username**
 * **email**
@@ -66,6 +67,7 @@ end
 **2. Corpse**
 
 *Attributes*
+
 A Corpse has fields for:
 * **title**
 * **style_id**
@@ -99,6 +101,7 @@ end
 **3. Line**
 
 *Attributes*
+
 A Line has fields for:
 * **text**
 * **count** (the line number)
@@ -122,6 +125,7 @@ end
 **4. Style**
 
 *Attributes*
+
 A Style has a field for: 
 * **name**
 
@@ -220,6 +224,7 @@ end
 **3. Line**
 
 *Validations*
+
 Validates the presence of `:text` and sets the character maximum to 200 to prevent buffer overflow.
 
 I use a custom validation to validate a word count of between 10-20 words for a Line. The word count validation is not run after a Corpse is completed to allow for a post-completion method (`lose_word`, discussed below). A completed Line has a `:current_scribe` set to `nil`, but because a new Line is formed contemporaneously with a new Corpse, using just `current_scribe == nil` as an indicator of a completed Line would keep the validation from running for the first Line. So, the validation does not run when both the Line is associated with a Corpse and `current_scribe == nil`. 
@@ -258,6 +263,7 @@ end
 **4. Style**
 
 *Validations*
+
 The uniqueness of the name is validated before the first save of a Style that is not yet in the database.
 
 *Methods*
@@ -276,7 +282,7 @@ end
 
 <a id="walkthrough"> **IV. WALKTHROUGH** </a>
 
-### **Part 1: New User**
+**Part 1: New User**
 
 A User can sign-up/sign-in using Devise or Github (thanks to Omniauth). A User enters an **email** and **password**, with standard validations provided by Devise.
 
@@ -290,7 +296,8 @@ When a User signs in they can see:
 
 Also, the header for a signed-in User has links to view all viewable Corpses.
 ![](http://i.imgur.com/EfArogrl.png)
-### ** Part 2: Creating a New Corpse** 
+
+** Part 2: Creating a New Corpse** 
 
 First, yes this sounds like a horror movie. But moving on...
 
@@ -311,19 +318,19 @@ When the new Corpse form is submitted:
 * a new Style is instantiated (if the User creates a new one); and
 * a new User is randomly selected to write the second Line.
 
-### ** Part 3: Adding a Line to a Corpse**
+** Part 3: Adding a Line to a Corpse**
 
 When subsequent Users write Lines for the Corpse, They can only view the Corpse's `:title` and Style and can only see the last five words of the previous author's Line. 
 
 ![](http://i.imgur.com/bUpXXxql.png)
 
-### ** Part 4: Viewing a Corpse **
+** Part 4: Viewing a Corpse **
 
 Each line is rendered in a different color, but the authorship remains anonymous. 
 
 ![](http://i.imgur.com/yuMklDZl.png)
 
-### ** Part 5: Decomposing a Corpse ** 
+** Part 5: Decomposing a Corpse ** 
 
 There is a "Decompose" button on the page that anyone can press. It randomly permanently removes one word from each line of the Corpse. The button can be pressed until there is only one word left in each line of the Corpse. I wanted everything to be temporary and unstable. I think the surrealists would have appreciated it.
 
