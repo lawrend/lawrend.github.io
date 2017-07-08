@@ -6,10 +6,13 @@ date:   2017-07-08 03:24:15 -0400
 
 *Note: the four model classes--User, Corpse(aka Payam), Style, and Line--are capitalized throughout this post.*
 
-<h3><a href="#overview"> I. Overview </a><br>
-<a href="#models"> II. Models and Associations</a><br>
-<a href="#methods">III. Validations and Methods</a><br>
-<a href="#walkthrough">IV. Walkthrough</a></h3>
+<a href="#overview"><h3>I. Overview</h3></a>
+
+<a href="#models"> II. Models and Associations</a>
+
+<a href="#methods">III. Validations and Methods</a>
+
+<a href="#walkthrough">IV. Walkthrough</a>
 
 <a id="overview"> **I. OVERVIEW** </a>
 
@@ -23,7 +26,7 @@ The whole Payam can be read only after all eight Users have added their Lines. W
 
 The final odd twist to the game is that once the Payam is public, *anyone* can press a Payam's "Decompose" button, and one word will be permanently deleted from each Line. The button can be pushed until only one word per Line remains.
 
-###*'Payam' to the User but 'Corpse' to the Coder - Why?*
+### 'Payam' to the User but 'Corpse' to the Coder - Why?
 
 Yeah, so about that name thing...I was originally going to call this app *Exquisite Corpse*  and a finished round of the game would be a *Corpse*, but that sounded way too creepy.
 
