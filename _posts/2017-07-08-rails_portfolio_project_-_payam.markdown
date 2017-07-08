@@ -324,13 +324,13 @@ When subsequent Users write Lines for the Corpse, They can only view the Corpse'
 
 ![](http://i.imgur.com/bUpXXxql.png)
 
-**Part 4: Viewing a Corpse **
+**Part 4: Viewing a Corpse**
 
 Each line is rendered in a different color, but the authorship remains anonymous. 
 
 ![](http://i.imgur.com/yuMklDZl.png)
 
-**Part 5: Decomposing a Corpse ** 
+**Part 5: Decomposing a Corpse** 
 
 There is a "Decompose" button on the page that anyone can press. It randomly permanently removes one word from each line of the Corpse. The button can be pressed until there is only one word left in each line of the Corpse. I wanted everything to be temporary and unstable. I think the surrealists would have appreciated it.
 
