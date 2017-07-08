@@ -6,12 +6,12 @@ date:   2017-07-08 03:24:15 -0400
 
 *Note: the four model classes--User, Corpse(aka Payam), Style, and Line--are capitalized throughout this post.*
 
-<h3><a href="#overview">I. Overview</a></h3>
-<h3><a href="#models">II. Models and Associations</a></h3>
-<h3><a href="#methods">III. Validations and Methods</a></h3>
-<h3><a href="#walkthrough">IV. Walkthrough</a></h3>
+### <a href="#overview">I. Overview</a>
+### <a href="#models">II. Models and Associations</a>
+### <a href="#methods">III. Validations and Methods</a>
+### <a href="#walkthrough">IV. Walkthrough</a> 
 
-<h2 id="overview"> **I. OVERVIEW** </h2>
+<a id="overview"> **I. OVERVIEW** </a>
 
 The code for this app can be found on my github [here.](https://github.com/lawrend/payam)
 
