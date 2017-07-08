@@ -6,9 +6,11 @@ date:   2017-07-08 03:24:15 -0400
 
 *Note: the four model classes--User, Corpse(aka Payam), Style, and Line--are capitalized throughout this post.*
 
-### <a href="#overview">I. Overview</a>
-### <a href="#models">II. Models and Associations</a>
+<a href="#overview"> ### I. Overview </a>
+<a href="#models">### II. Models and Associations</a>
+
 ### <a href="#methods">III. Validations and Methods</a>
+
 ### <a href="#walkthrough">IV. Walkthrough</a> 
 
 <a id="overview"> **I. OVERVIEW** </a>
@@ -23,7 +25,7 @@ The whole Payam can be read only after all eight Users have added their Lines. W
 
 The final odd twist to the game is that once the Payam is public, *anyone* can press a Payam's "Decompose" button, and one word will be permanently deleted from each Line. The button can be pushed until only one word per Line remains.
 
-### *'Payam' to the User but 'Corpse' to the Coder - Why?*
+###*'Payam' to the User but 'Corpse' to the Coder - Why?*
 
 Yeah, so about that name thing...I was originally going to call this app *Exquisite Corpse*  and a finished round of the game would be a *Corpse*, but that sounded way too creepy.
 
@@ -31,7 +33,7 @@ I decided to call each round a *Payam* but I'd already written a lot of the code
 
 In a real-world situation I would have gone in and re-written the code, especially if this was going to be maintained by future developers.  However, I used it as an opportunity to learn a bit more about routing. Read about it [here](#).
 
-<h2 id="models"> **II. MODELS AND ASSOCIATIONS**</h2>
+<a id="models"> **II. MODELS AND ASSOCIATIONS** </a>
  
 1. **User** - has many Lines they have written, and has many Corpses through those Lines
 2. **Corpse** - has many (8) Lines, has many (8) Users through those Lines, and belongs to a Style
