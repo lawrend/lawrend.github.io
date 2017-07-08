@@ -236,7 +236,7 @@ I use a custom validation to validate a word count of between 10-20 words for a 
 ```
 class Line < ApplicationRecord
   validates :text, presence: true, length: {maximum: 200}
-  validate :word_count, unless: Proc.new {|a| a.corpse != nil && a.corpse.current_scribe.nil? }
+  validate :word_count, unless: Proc.new {|a| a.corpse != nil && a.corpse.current_scribe.nil?}
 	
 	def lose_word
     if self.text.split.length > 1
@@ -297,7 +297,7 @@ When a User signs in they can see:
 Also, the header for a signed-in User has links to view all viewable Corpses.
 ![](http://i.imgur.com/EfArogrl.png)
 
-** Part 2: Creating a New Corpse** 
+**Part 2: Creating a New Corpse** 
 
 First, yes this sounds like a horror movie. But moving on...
 
@@ -318,19 +318,19 @@ When the new Corpse form is submitted:
 * a new Style is instantiated (if the User creates a new one); and
 * a new User is randomly selected to write the second Line.
 
-** Part 3: Adding a Line to a Corpse**
+**Part 3: Adding a Line to a Corpse**
 
 When subsequent Users write Lines for the Corpse, They can only view the Corpse's `:title` and Style and can only see the last five words of the previous author's Line. 
 
 ![](http://i.imgur.com/bUpXXxql.png)
 
-** Part 4: Viewing a Corpse **
+**Part 4: Viewing a Corpse **
 
 Each line is rendered in a different color, but the authorship remains anonymous. 
 
 ![](http://i.imgur.com/yuMklDZl.png)
 
-** Part 5: Decomposing a Corpse ** 
+**Part 5: Decomposing a Corpse ** 
 
 There is a "Decompose" button on the page that anyone can press. It randomly permanently removes one word from each line of the Corpse. The button can be pressed until there is only one word left in each line of the Corpse. I wanted everything to be temporary and unstable. I think the surrealists would have appreciated it.
 
