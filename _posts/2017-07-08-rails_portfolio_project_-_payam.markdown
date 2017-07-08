@@ -6,7 +6,7 @@ date:   2017-07-08 03:24:15 -0400
 
 *Note: the four model classes--User, Corpse(aka Payam), Style, and Line--are capitalized throughout this post.*
 
-<a href="#overview"><h3>I. Overview</h3></a>
+<a href="#overview">I. Overview</a>
 
 <a href="#models"> II. Models and Associations</a>
 
@@ -26,7 +26,7 @@ The whole Payam can be read only after all eight Users have added their Lines. W
 
 The final odd twist to the game is that once the Payam is public, *anyone* can press a Payam's "Decompose" button, and one word will be permanently deleted from each Line. The button can be pushed until only one word per Line remains.
 
-### 'Payam' to the User but 'Corpse' to the Coder - Why?
+###'Payam' to the User but 'Corpse' to the Coder - Why?
 
 Yeah, so about that name thing...I was originally going to call this app *Exquisite Corpse*  and a finished round of the game would be a *Corpse*, but that sounded way too creepy.
 
@@ -41,22 +41,22 @@ In a real-world situation I would have gone in and re-written the code, especial
 3. **Line** - belongs to a Corpse and belongs to the User who wrote the Line
 4. **Style** - has many Corpses
 
-### 1. User
+**1. User**
 
-#### *Attributes*
+*Attributes*
 
 A User has fields for:
 * **username**
 * **email**
 * **password**
 
-#### *Associations*
+*Associations*
 
 * Each ***User has many Lines***. The `:auth_id` of a Line is the User's id so the foreign key is `:auth_id`.
 
 * Each ***User has many Corpses through Lines***.
 
-#### *Model*
+*Model*
 
 ```
 class User < ApplicationRecord
@@ -65,9 +65,9 @@ class User < ApplicationRecord
 end
 ```
 
-### 2. Corpse
+**2. Corpse**
 
-#### *Attributes*
+*Attributes*
 
 A Corpse has fields for:
 * **title**
@@ -75,7 +75,7 @@ A Corpse has fields for:
 * **current_scribe** (the current User)
 * **counter** (the line number of the Line that the current_scribe creates)
 
-#### *Associations*
+*Associations*
 
 * Each ***Corpse belongs to a Style***.
 
@@ -83,11 +83,11 @@ A Corpse has fields for:
 
 * Each ***Corpse has many Users through Lines***. The author of each Line is a User so the source is `:auth`.
 
-#### *Scopes*
+*Scopes*
 
 When eight Users have written Lines, the `:current_scribe` is set to `nil`. The scope `:completed` is a Corpse with a `current_scribe` set to `nil`.
 
-#### *Model*
+*Model*
 
 ```
 class Corpse < ApplicationRecord
@@ -100,9 +100,9 @@ class Corpse < ApplicationRecord
 end
 ```
 
-### 3. Line
+**3. Line**
 
-#### Attributes
+*Attributes*
 
 A Line has fields for:
 * **text**
@@ -110,13 +110,13 @@ A Line has fields for:
 * **author id**
 * **corpse id**
 
-#### Associations
+*Associations*
 
 * Each ***Line belongs to an "auth"***. The author ("auth") of a Line is a User so the `:class_name` is set to `User`. 
 
 * Each ***Line belongs to a Corpse***. Because both a new Corpse and a new Line are instantiated when the form is submitted, this association has an option of `optional: true` to allow a Line to be created simultaneously with the Corpse.  
 
-#### Model
+*Model*
 
 ```
 class Line < ApplicationRecord
@@ -125,18 +125,18 @@ class Line < ApplicationRecord
 end
 ```
 
-### 4. Style
+**4. Style**
 
-#### *Attributes*
+*Attributes*
 
 A Style has a field for: 
 * **name**
 
-#### *Associations*
+*Associations*
 
 * Each ***Style has many Corpses***.
 
-#### *Model*
+*Model*
 
 ```
 class Style < ApplicationRecord
@@ -144,19 +144,19 @@ class Style < ApplicationRecord
 end
 ```
 
-<h2 id="methods"> **III. VALIDATIONS AND METHODS** </h2>
+<a id="methods"> **III. VALIDATIONS AND METHODS** </a>
 
-### 1. User
+**1. User**
 
-#### *Validations*
+*Validations*
 I let Devise handles most of the validations but add a uniqueness validation to `:username`.
 
-#### *Class Methods - Oauth*
-* **self.find_for_oauth
-* self.new_for_session
-* self.dummy_email**
+*Class Methods - Oauth*
+* **self.find_for_oauth**
+* **self.new_for_session**
+* **self.dummy_email**
 
-#### *Instance Methods*
+*Instance Methods*
 * **waiting:** Displays all Corpses awaiting the current User's addition of a Line.
 
 ```
@@ -171,15 +171,15 @@ class User < ApplicationRecord
 end
 ```
 
-### 2. Corpse
+**2. Corpse**
 
-#### *Validations*
+*Validations*
 
 A Corpse is just a collections of associations with a unique, one-word title. The uniqueness validation is an obvious addition but I also add a character maximum to avoid buffer overflow.
 
 For the one-word title validation I created a `TitleValidator` class and put it in the `app/models/concerns` folder. It wasn't necessary but I want to use at least one concern and it is at least plausible that another classs might have a `:title` field with a one-word restriction.
 
-#### *Methods*
+*Methods*
 
 * **previous_five:** Displays the last five words of the last Line added to the Corpse.
 * **send_to_next:** I tried to DRY up my controller but this is a weak attempt. It just bumps up the counter of the Corpse by one and saves the Corpse. The current_scribe is picked at random using logic in the controller so when this method is run the Corpse is saved with a new current_scribe and counter and is accessible to the newly-selected current_scribe.
@@ -223,14 +223,14 @@ class TitleValidator < ActiveModel::Validator
 end
 ```
 
-### 3. Line
+**3. Line**
 
-#### *Validations*
+*Validations*
 Validates the presence of `:text` and sets the character maximum to 200 to prevent buffer overflow.
 
 I use a custom validation to validate a word count of between 10-20 words for a Line. The word count validation is not run after a Corpse is completed to allow for a post-completion method (`lose_word`, discussed below). A completed Line has a `:current_scribe` set to `nil`, but because a new Line is formed contemporaneously with a new Corpse, using just `current_scribe == nil` as an indicator of a completed Line would keep the validation from running for the first Line. So, the validation does not run when both the Line is associated with a Corpse and `current_scribe == nil`. 
 
-#### *Methods*
+*Methods*
 * **word_count:** Splits the text into an array and adds an error if the word count is either less than 10 or greater than 20.
 * **lose_word:** The button on the show view of a completed Corpse, when pressed, permanently deletes a word from each Line of the Corpse, so long as the Line has at least one word. Because the word_count custom validation is thrown when a Line's word count drops below 10, it does not run on completed Corpse's so that the lose_word method can run properly.
 
@@ -260,12 +260,13 @@ class Line < ApplicationRecord
 
 end
 ```
-### 4. Style
 
-#### *Validations*
+**4. Style**
+
+*Validations*
 The uniqueness of the name is validated before the first save of a Style that is not yet in the database.
 
-#### *Methods*
+*Methods*
 * **newest_style?:** Checks to see if a Style has yet to be saved to the database.
 
 ```
@@ -279,7 +280,7 @@ class Style < ApplicationRecord
 end
 ```
 
-<h2 id="walkthrough"> **IV. WALKTHROUGH** </h2>
+<a id="walkthrough"> **IV. WALKTHROUGH** </a>
 
 ### **Part 1: New User**
 
