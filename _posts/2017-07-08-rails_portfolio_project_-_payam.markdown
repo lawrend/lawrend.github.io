@@ -26,7 +26,7 @@ The whole Payam can be read only after all eight Users have added their Lines. W
 
 The final odd twist to the game is that once the Payam is public, *anyone* can press a Payam's "Decompose" button, and one word will be permanently deleted from each Line. The button can be pushed until only one word per Line remains.
 
-###'Payam' to the User but 'Corpse' to the Coder - Why?
+*'Payam' to the User but 'Corpse' to the Coder - Why?*
 
 Yeah, so about that name thing...I was originally going to call this app *Exquisite Corpse*  and a finished round of the game would be a *Corpse*, but that sounded way too creepy.
 
@@ -44,7 +44,6 @@ In a real-world situation I would have gone in and re-written the code, especial
 **1. User**
 
 *Attributes*
-
 A User has fields for:
 * **username**
 * **email**
@@ -57,7 +56,6 @@ A User has fields for:
 * Each ***User has many Corpses through Lines***.
 
 *Model*
-
 ```
 class User < ApplicationRecord
   has_many :lines, :foreign_key => "auth_id"
@@ -68,7 +66,6 @@ end
 **2. Corpse**
 
 *Attributes*
-
 A Corpse has fields for:
 * **title**
 * **style_id**
@@ -88,7 +85,6 @@ A Corpse has fields for:
 When eight Users have written Lines, the `:current_scribe` is set to `nil`. The scope `:completed` is a Corpse with a `current_scribe` set to `nil`.
 
 *Model*
-
 ```
 class Corpse < ApplicationRecord
   has_many :lines, dependent: :destroy
@@ -103,7 +99,6 @@ end
 **3. Line**
 
 *Attributes*
-
 A Line has fields for:
 * **text**
 * **count** (the line number)
@@ -117,7 +112,6 @@ A Line has fields for:
 * Each ***Line belongs to a Corpse***. Because both a new Corpse and a new Line are instantiated when the form is submitted, this association has an option of `optional: true` to allow a Line to be created simultaneously with the Corpse.  
 
 *Model*
-
 ```
 class Line < ApplicationRecord
   belongs_to :auth, :class_name => "User"
@@ -128,7 +122,6 @@ end
 **4. Style**
 
 *Attributes*
-
 A Style has a field for: 
 * **name**
 
@@ -149,6 +142,7 @@ end
 **1. User**
 
 *Validations*
+
 I let Devise handles most of the validations but add a uniqueness validation to `:username`.
 
 *Class Methods - Oauth*
@@ -162,10 +156,10 @@ I let Devise handles most of the validations but add a uniqueness validation to 
 ```
 class User < ApplicationRecord
 
-  validates_uniqueness_of :username
-	
-	def waiting
-    Corpse.where(:current_scribe => self.id)
+validates_uniqueness_of :username	
+
+  def waiting
+	  Corpse.where(:current_scribe => self.id)
   end
 	
 end
