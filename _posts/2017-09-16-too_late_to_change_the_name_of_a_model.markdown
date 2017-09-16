@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Too Late to Change the Name of a Model?"
-date:   2017-09-16 20:36:03 +0000
+date:   2017-09-16 16:36:04 -0400
 ---
 
 
@@ -16,22 +16,37 @@ But of course I would. And after writing a decent amount of code and generating 
 Luckily, with Rails things are pretty easy. 
 ```
 Rails.application.routes.draw do
+
   resources :styles do
+	
 	  resources :corpses, :path => "payams"
+		
   end
+	
   resources :lines, :except => [:update, :edit]
+	
   resources :corpses, :path => "payams" do
+	
     member do
+		
       post 'decompose'
+			
     end
+		
   end
+	
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+	
   resources :players do
+	
     resources :corpses, :path => "payams"
+		
     resources :lines
+		
   end
+	
 end
-	```
+```
 	
 Everywhere I had used `:corpses` I added a `:path => "payams"` and the urls were SFW again.
 
