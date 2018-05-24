@@ -14,10 +14,10 @@ Well, the previous app had some issues with overgrown complexity so I stripped t
 My goal with this project was just to learn as much as I could, but that meant I ended up spending time on things that weren't important to overall functionality, but I just wanted to see if I could make it work. And that got me learning things I didn't intend to, and taking a lot of time I didn't need to. 
 
 
-## Payam - What is It? 
+## Payam - What is It? ##
 
 
-### Players and Gameplay
+### Players and Gameplay ###
 
 Players sign up with an email, username, and password. Alternatively, they can use Github. 
 
