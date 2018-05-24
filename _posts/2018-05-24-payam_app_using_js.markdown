@@ -13,12 +13,12 @@ Well, the previous app had some issues with overgrown complexity so I stripped t
 
 My goal with this project was just to learn as much as I could, but that meant I ended up spending time on things that weren't important to overall functionality, but I just wanted to see if I could make it work. And that got me learning things I didn't intend to, and taking a lot of time I didn't need to. 
 
-##Technical Notes
+## Technical Notes
 
 ### Payam - What is It? 
 
 
-#### * Players and Gameplay
+#### Players and Gameplay
 
 Players sign up with an email, username, and password. Alternatively, they can use Github. 
 
@@ -26,17 +26,17 @@ A Player can make a new Payam, pick its title and style, and write the first lin
 
 After eight Players write Lines the Payam is completed and all Lines can be read. The Payam is listed with all other completed Payams of its Style, and anyone can read them.
 
-* #### Associations
+#### Associations
 
 A Payam does not belong to a Player directly (there is not a player_id indexed in the Payams table). Instead, a Line belongs to both a Player (as the author) and a Payam. A Player has many Lines and has many Payams through those Lines. 
 
 Each Payam belongs to a Style and has many Lines, and has many Players through those Lines.
 
-* #### Decompositions
+ #### Decompositions
 
 Once a Payam is completed and can be displayed it can be decomposed--one random word is removed from each line. Another press of the button and another word from each line is gone, and a Player can press until only one word on each Line remains. If at any time the Player can save the current decomposed Payam as a special kind of Payam--a "Decomposition". A decomposition's Lines are all by the same Player, and it is associated with the original Payam through an integer "orig" attribute. 
 
-* #### AJAX calls and JS
+ #### AJAX calls and JS
 
 A Player's homepage shows a Player's completed Params one at a time, adding them to the DOM with JS and an AJAX call. 
 
