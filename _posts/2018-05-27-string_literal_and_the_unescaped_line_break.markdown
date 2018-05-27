@@ -29,7 +29,7 @@ The list I had on hand was for making random pass phrases using 6-sided die:<br>
 3. Look up the corresponding word on the list.
  <br><br>
 
-| ![random word list](https://i.imgur.com/BvBUzuB.png)  |<br>
+![random word list](https://i.imgur.com/BvBUzuB.png)<br>
 *The List*
 <br>
 <br>
