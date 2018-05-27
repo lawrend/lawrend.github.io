@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "String literal and the unescaped line break"
-date:       2018-05-27 07:36:19 +0000
+date:       2018-05-27 03:36:20 -0400
 permalink:  string_literal_and_the_unescaped_line_break
 ---
 
@@ -24,20 +24,18 @@ A *Payam* is a kind of poem, usually made by eight players. I added a feature to
 <br>
 The list I had on hand was for making random pass phrases using 6-sided die:<br>
 <br>
-1. +Roll five times;
-2. +Generate a five-digit number (each integer between 1-6);
-3. +Look up the corresponding word on the list.
+1. Roll five times;
+2. Generate a five-digit number (each integer between 1-6);
+3. Look up the corresponding word on the list.
  <br><br>
 
-| *The List* |
-| ------------ |
-| ![random word list](https://i.imgur.com/BvBUzuB.png)  |
+| ![random word list](https://i.imgur.com/BvBUzuB.png)  |<br>
+*The List*
 <br>
 <br>
-1.  + I replicated five rolls to generate the number,
-2.  + searched the file for it,
-3.  + and returned the line, index of [6..-1] 
-4.  *(starting at the 7th character to just return the word and not the number)*
+1.  I replicated five rolls to generate the number,
+2.  searched the file for it,
+3.  and returned the line, index of [6..-1] *(starting at the 7th character to just return the word and not the number)*
 <br>
 <br>
 ```
@@ -54,8 +52,8 @@ def random_word
 ```
 <br>	
 I used this to generate a random *Payam*:<br>
-1. + ten `random_word` formed each of eight lines
-2. + one `random_word` was the title<br>
+* ten `random_word` formed each of eight lines
+* one `random_word` was the title<br>
 <br>
 ```  
 def random
@@ -96,7 +94,4 @@ Figuring this out was about 10% testing things, 5% writing code, and 85% pushing
 *This is accurate*<br>
 <br>
 Don't judge coding work by how much typing you hear, unless you give equal weight to how much staring out the window you see. 
-
-
-
 
