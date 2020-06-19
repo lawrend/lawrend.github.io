@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Count the digits in each number in an array"
-date:       2020-06-19 00:46:12 +0000
+title:      "total number of integers in an array with an even number of digits WOO!"
+date:       2020-06-18 20:46:12 -0400
 permalink:  count_the_digits_in_each_number_in_an_array
 ---
 
