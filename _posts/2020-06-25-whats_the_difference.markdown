@@ -1,13 +1,13 @@
 ---
 layout: post
-title:      "What's the Difference? #"
-date:       2020-06-26 00:17:56 +0000
+title:      "What's the Difference? "
+date:       2020-06-25 20:17:57 -0400
 permalink:  whats_the_difference
 ---
 
-## Minimum absolute difference between two elements in an array ##
+## Minimum absolute difference between two elements in an array 
 
-### Greedy Algorithms ###
+### Greedy Algorithms 
 
 Some alogrithm challenges involved something called [*greedy algorithms*](https://en.wikipedia.org/wiki/Greedy_algorithm).  These are algorithms that may not solve for the *globally* optimal solution, but at each stage makes a *locally* optimal solution. 
 
